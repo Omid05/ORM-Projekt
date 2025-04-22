@@ -1,0 +1,18 @@
+@import "mixin";
+
+body{
+    @include logo; 
+}
+
+#topRow{
+    display: flex;
+
+}
+
+#icons{
+    height: 50px;
+    width: 50px;
+    background-color: black;
+    
+}
+
