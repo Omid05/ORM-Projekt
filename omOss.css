@@ -1,8 +1,17 @@
-.h1{
+h1{
     text-align: center;
 }
 
-.karta{
-    justify-content: center;
-    align-items: center;
+#karta{
+    display: block;
+    width: 50%;
+    height: 400px;
+    min-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#logo{
+    width: 100px;
+    height: 50px;
 }
