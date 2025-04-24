@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+
+@mixin logo{
+    #logo{
+        height: 55px;
+        width: 10%;
+        background-color: #F3F2F2;
+        border-radius: 10px;
+        
+        font-size: 45px; 
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: bold;
+        font-style: normal;
+        text-align: center;
+
+        
+    }
+
+    
+    
+    .letter{
+        display: inline;
+        
+        
+    }
+    
+    .red{
+        color: red;
+    }
+}
+
+@mixin items{
+
+    #items{
+        display: flex;
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: bold;
+        font-style: normal;
+        text-align: center;
+        justify-content: center;
+        
+    }
+    
+    .item{
+        height: 300px;
+        width: 15%;
+        border: gray solid 1px ;
+        border-radius: 10px;
+        margin: 10px;
+        }
+    
+    .imgplaceholder{
+        margin-top: 10px;
+        height:10vmax;
+        width: 10vmax;
+        background-color: black;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .amount{
+        display: flex;
+        width: 70%;
+        height: 40px;
+        background-color: #F3F2F2;
+        border-radius: 50px;
+        margin: auto;
+    }
+    
+    .remove{
+        height: 80%;
+        width: 20%;
+        background-color: gray;
+        border-radius: 50px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    
+    .add{
+        height: 80%;
+        width: 20%;
+        background-color: red;
+        border-radius: 50px;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .addText{
+        margin-top: 20%;
+        color: white;
+        height: 80%;
+        width: 20%;
+        border-radius: 50px;
+        border-color: transparent;
+        background-color: transparent;
+    }
+    
+    .amountNumber{
+        align-self: center;
+        margin-left: auto;
+    }
+    
+    
+    
+
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <title>ORM</title>
+</head>
+<body>
+<div id="topRow">
+ <div id="logo">
+        <p class="red letter">O</p>
+        <p class="letter" >R</p>
+        <p class="red letter">M</p>
+    </div>
+<div id="icons">
+    <img class="iconImg" src="./images/search.png">
+    <img class="iconImg" src="images/cart.png">
+    <img class="iconImg" src="images/profile.png">
+
+</div>
+</div>
+
+<div id="items">
+   
+    <div class="item">
+        <div class="imgplaceholder"></div>
+        <p class="itemName">Item Name</p>
+        <p class="price">100 kr</p>
+        <div class="amount">
+            <div class="remove"><form action="/remove" method="POST"><button class="addText">-</button></form></div>
+            <p class="amountNumber" id="burgerAmount">0 st</p>
+            
+            <div class="add">
+                <form action="/add" method="POST"><button class="addText">+</button></form></div>
+        </div>
+    </div>
+   
+</div>
+<ul>
+    <% cart.forEach((item) =>{ %>
+    <li>
+        <strong><%= item.item %></strong><br>
+        <strong><%= item.amount %></strong><br>
+    </li>
+    <%}); %>
+</ul>
+
+    <script src="script.js"></script>
+</body>
+</html>

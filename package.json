@@ -1,0 +1,26 @@
+{
+  "name": "orm-projekt",
+  "version": "1.0.0",
+  "description": "Omid, Marcus och Haris matleveranssida projekt",
+  "homepage": "https://github.com/Omid05/ORM-Projekt#readme",
+  "bugs": {
+    "url": "https://github.com/Omid05/ORM-Projekt/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Omid05/ORM-Projekt.git"
+  },
+  "license": "ISC",
+  "author": "Haris Omid Marcus",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "pg": "^8.15.1"
+  }
+}

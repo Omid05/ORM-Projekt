@@ -1,0 +1,105 @@
+@import "mixin";
+
+
+    @include logo; 
+
+
+#topRow{
+    display: flex;
+
+}
+
+#icons{
+    margin-left: auto;
+    display: flex;
+}
+
+.iconImg{
+    height: 55px;
+    width: 55px;
+    margin: 10px;
+}
+
+
+
+#items{
+    display: flex;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    text-align: center;
+    justify-content: center;
+    
+}
+
+.item{
+    height: 300px;
+    width: 15%;
+    border: gray solid 1px ;
+    border-radius: 10px;
+    margin: 10px;
+    }
+
+.imgplaceholder{
+    margin-top: 10px;
+    height:10vmax;
+    width: 10vmax;
+    background-color: black;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.amount{
+    display: flex;
+    width: 70%;
+    height: 40px;
+    background-color: #F3F2F2;
+    border-radius: 50px;
+    margin: auto;
+}
+
+.remove{
+    height: 80%;
+    width: 20%;
+    background-color: gray;
+    border-radius: 50px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.add{
+    height: 80%;
+    width: 20%;
+    background-color: red;
+    border-radius: 50px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+
+
+}
+.addText{
+    color: white;
+    border-radius: 50px;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    border-color: transparent;
+
+    
+}
+
+.amountNumber{
+    align-self: center;
+    margin-left: auto;
+}
+
+
+
+
+
+
+
+
+
