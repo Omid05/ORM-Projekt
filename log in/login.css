@@ -6,12 +6,15 @@ div{
     border-radius: 10px;
 }
 
+body{
+    box-shadow: 0px 8px 15px rgb(101, 99, 99);
+}
+
 input {
     width: 80%;
     height: 30px;
     font-size: 16px;
     padding: 5px;
-
 }
 
 h3{
@@ -71,7 +74,7 @@ input {
 
 
 button {
-    width: 30%; /* match input width */
+    width: 30%; 
     height: 40px;
     font-size: 16px;
     border-radius: 5px;
