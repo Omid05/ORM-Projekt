@@ -21,20 +21,34 @@
 </div>
 </div>
 
-<div id="items">
-   
+    <div id="items">
+<% items.forEach((item) =>{ %>  
+
     <div class="item">
         <div class="imgplaceholder"></div>
-        <p class="itemName">Item Name</p>
-        <p class="price">100 kr</p>
+        <p class="itemName"><%= item.item%></p>
+      
+
+        <p class="price"><%= item.price%>kr </p>
         <div class="amount">
-            <div class="remove"><form action="/remove" method="POST"><button class="addText">-</button></form></div>
-            <p class="amountNumber" id="burgerAmount">0 st</p>
+            <div class="remove"><form action="/remove" method="POST"><input type="hidden" name="item_id" id="item_id" value="<%= item.ID%>">
+                <input type="hidden" name="item_name"  id="item_id" value="<%= item.item%>"><button class="addText">-</button></form></div>
+           
+                    <p class="amountNumber" id="burgerAmount">  
+                        <%= item.amount%>
+
+
+                    </p>
             
             <div class="add">
-                <form action="/add" method="POST"><button class="addText">+</button></form></div>
+                <form action="/add" method="POST">
+                    <input type="hidden" name="item_id" id="item_id" value="<%= item.id%>">
+        <input type="hidden" name="item_name"  id="item_id" value="<%= item.item%>">
+                    <button class="addText">+</button>
+                </form></div>
         </div>
     </div>
+    <%}); %>
    
 </div>
 <ul>
@@ -42,10 +56,18 @@
     <li>
         <strong><%= item.item %></strong><br>
         <strong><%= item.amount %></strong><br>
+        <strong><%= item.totalprice %> kr</strong><br><br>
+
+
+
+        
+
     </li>
     <%}); %>
+    <p></p>
 </ul>
 
-    <script src="script.js"></script>
+    <script>
+    </script>
 </body>
 </html>
