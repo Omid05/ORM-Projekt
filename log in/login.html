@@ -5,32 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="login.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
 </head>
+
 <body style="width: 665px; height: 765px; border: black solid 2px;">
     <h1>Välkommen</h1>
 <div id="main">
-    <div id="google" style="border: 1px solid black;">
-        <img src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png" alt="Google Logo">
-        <h3 id="googlefortsätt" class="padding15">Fortsätt med Google →</h3>
+    <div class="divs" id="google" style="border: 1px solid black;">
+        <div class="d-flex justify-content-center login-google" style="padding-left: 32.5%;">
+            <div 
+              id="g_id_onload"
+              data-client_id="DIN_CLIENT_ID_HÄR"
+              data-context="signin"
+              data-ux_mode="redirect"
+              data-login_uri="https://dinwebbplats.se/api/auth/callback"
+              data-auto_prompt="false">
+            </div>
+            <div
+              class="g_id_signin"
+              data-type="standard"
+              data-shape="rectangular"
+              data-text="signin_with"
+              data-size="large"
+              data-logo_alignment="left">
+            </div>
+          </div>
     </div>    
-    <div id="användarnamn" class="input-box">
-        <h3 class="input">Användarnamn</h3>
-        <input type="text" placeholder="Skriv ditt användarnamn">
-      </div>
-      <div id="lösenord" class="input-box">
-        <h3 class="input">Lösenord</h3>
-        <input type="password" placeholder="Skriv ditt lösenord">
-        <button>skicka in</button>
-      </div>
-
-    <div id="login" style="border: 1px solid black;"><h3 class="padding15">Login</h3></div>
-    <div id="registrera" style="border: 1px solid black;"><h3 class="padding15">Registrera</h3></div>
+    <div class="divs input-box" id="användarnamn">
+      <h3 class="input">Användarnamn</h3>
+      <input type="text" id="AnvändarnamnInput" placeholder="Skriv ditt användarnamn">
+    </div>
+    
+    <div class="divs input-box" id="lösenord">
+      <h3 class="input">Lösenord</h3>
+      <input type="password" id="LösenordInput" placeholder="Skriv ditt lösenord">
+      <button id="submitButton" type="submit">Skicka in</button>
+    </div>
+    
+    <div class="divs" id="login" style="border: 1px solid black;"><h3 class="padding15">Login</h3></div>
+    <div class="divs" id="registrera" style="border: 1px solid black;"><h3 class="padding15">Registrera</h3></div>
 </div>
 
+<script src="login.js">
 
-
-
-
+</script>
 
 </body>
 </html>

@@ -1,4 +1,4 @@
-div{
+.divs{
     padding-bottom: 10px;
     width: 556px; height: 75px; 
     margin-bottom: 15px;
@@ -82,7 +82,7 @@ button {
     background-color: rgb(244, 238, 238);
     color: black;
     cursor: pointer;
-    margin-top: 10px; /* space from input */
+    margin-top: 10px;
     margin-left: 35%;
 }
 
