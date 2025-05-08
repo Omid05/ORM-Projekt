@@ -51,6 +51,8 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .item {
@@ -100,6 +102,14 @@
   margin-left: auto;
 }
 
+.add:hover {
+  background-color: #cc0000;
+}
+
+.remove:hover {
+  background-color: #676767;
+}
+
 .addText {
   color: white;
   border-radius: 50px;
@@ -114,5 +124,15 @@
       -ms-grid-row-align: center;
       align-self: center;
   margin-left: auto;
+}
+
+.info {
+  position: absolute;
+  bottom: 1%;
+}
+
+#kontakt, #omoss {
+  display: inline;
+  margin-right: 3%;
 }
 /*# sourceMappingURL=style.css.map */

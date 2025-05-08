@@ -14,7 +14,7 @@
         <p class="red letter">M</p>
     </div>
 <div id="icons">
-    <img class="iconImg" src="./images/search.png">
+    <img class="iconImg" src="images/search.png">
     <img class="iconImg" src="images/cart.png">
     <img class="iconImg" src="images/profile.png">
 
@@ -22,8 +22,10 @@
 </div>
 
     <div id="items">
-<% items.forEach((item) =>{ %>  
 
+<% items.forEach((item) =>{ %> 
+    <tr>
+        <td class="item">
     <div class="item">
         <div class="imgplaceholder"></div>
         <p class="itemName"><%= item.item%></p>
@@ -34,7 +36,7 @@
             <div class="remove"><form action="/remove" method="POST"><input type="hidden" name="item_id" id="item_id" value="<%= item.ID%>">
                 <input type="hidden" name="item_name"  id="item_id" value="<%= item.item%>"><button class="addText">-</button></form></div>
            
-                    <p class="amountNumber" id="burgerAmount">  
+                    <p class="amountNumber">  
                         <%= item.amount%>
 
 
@@ -48,8 +50,10 @@
                 </form></div>
         </div>
     </div>
+</td>
+</tr>
     <%}); %>
-   
+        </table>
 </div>
 <ul>
     <% cart.forEach((item) =>{ %>
@@ -66,6 +70,16 @@
     <%}); %>
     <p></p>
 </ul>
+
+
+    <footer>
+
+<h2 id="omoss">Om Oss</h2>
+<h2 id="kontakt">Kontakt</h2>
+</footer>
+
+
+
 
     <script>
     </script>
