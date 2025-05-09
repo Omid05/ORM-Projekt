@@ -19,24 +19,22 @@
     </a>
 
     <h3>När vill du hämta?</h3>
-    <div id="tider">
-        <ul>
-            <li>Idag</li>
-            <li>08:00</li>
-            <li>12:00</li>
-            <li>16:00</li>
-        </ul>
-        <ul>
-            <li>Imorgon</li>
-            <li>08:00</li>
-            <li>12:00</li>
-            <li>16:00</li>
-        </ul>
-        <ul>
-            <li>Övermorgon</li>
-            <li>08:00</li>
-            <li>12:00</li>
-            <li>16:00</li>
-    </div>
+    <select id="tider">
+        <optgroup label="Idag">
+            <option value="idag-08:00">08:00</option>
+            <option value="idag-12:00">12:00</option>
+            <option value="idag-16:00">16:00</option>
+        </optgroup>
+        <optgroup label="Imorgon">
+            <option value="imorgon-08:00">08:00</option>
+            <option value="imorgon-12:00">12:00</option>
+            <option value="imorgon-16:00">16:00</option>
+        </optgroup>
+        <optgroup label="Övermorgon">
+            <option value="övermorgon-08:00">08:00</option>
+            <option value="övermorgon-12:00">12:00</option>
+            <option value="övermorgon-16:00">16:00</option>
+        </optgroup>
+    </select>
 </body>
 </html>
