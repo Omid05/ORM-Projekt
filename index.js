@@ -2,6 +2,8 @@ import express from "express";
 import bodyParser from "body-parser";
 import pg from "pg";
 import pool from "./db.js"
+import "dotenv/config";
+
 
 const app = express();
 const port = 3000;
@@ -11,9 +13,11 @@ const db = new pg.Pool({
 user: "postgres",
   host: "localhost",
   database: "ORM",
-  password: "orm123.",
+  password: "123",
   port: 5432,
 });
+
+
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
@@ -26,7 +30,7 @@ app.listen(port, () => {
 })
 
 app.get("/", async (req, res) => {
-   //const cart = await db.query("SELECT * FROM cart");
+   //const cart = await pool.query("SELECT * FROM cart");
     const items = await pool.query("SELECT * FROM items ORDER BY id")
     
     
