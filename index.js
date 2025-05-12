@@ -43,6 +43,10 @@ app.get("/cart", async (req, res) =>{
 
 })
 
+app.get("/login", async (req, res) =>{
+    res.render("login.ejs")
+})
+
 app.post("/add", async (req, res) =>{
     const item = req.body.item_name
     
