@@ -6,6 +6,30 @@
     <title>ORM</title>
 </head>
 <body>
-    
+    <form action="/addItem" method="POST">
+        <label for="itemName">Namn:</label><br>
+        <input type="text" id="itemName" name="itemName" required><br>
+        <br>
+        <label for="itemPrice">Pris:</label><br>
+        <input type="text" id="itemPrice" name="itemPrice" required><br>
+        <br>
+        <button id="button" type="submit">Lägg till vara</button>
+    </form>
+
+    <% items.forEach(item =>{ %>
+        <li>
+            <h2><%= item.item%>: <%= item.price%> </h2>
+            <form action="/deleteItem/<%=item.id%>" method="POST"> 
+                <button type="submit">Ta bort vara</button>
+            </form>
+        </li>
+        <br>
+        <form action="/updateItem/<%= item.id%>" method="POST">
+            <input type="text" id="update" name="newPrice" value="<%=item.price%>" required>
+            <br>
+            <button type="submit">Uppdatera pris</button>
+            
+            </form>
+        <%}); %>
 </body>
 </html>

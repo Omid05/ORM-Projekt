@@ -47,6 +47,34 @@ app.get("/login", async (req, res) =>{
     res.render("login.ejs")
 })
 
+app.get("/admin", async (req, res) =>{
+    const items = await pool.query("SELECT * FROM items ORDER BY id")
+
+    res.render("admin.ejs", {items: items.rows})
+})
+
+app.post("/updateItem/:id", async (req, res) =>{
+    const id = req.params.id;
+    const newPrice = req.body.newPrice;
+    await pool.query("UPDATE items SET price = $1 WHERE id = $2", [newPrice, id]);
+    res.redirect("/admin")
+})
+
+app.post("/deleteItem/:id", async (req, res) =>{
+    const id = req.params.id;
+    await pool.query("DELETE FROM items WHERE id = $1", [id]);
+    res.redirect("/admin")
+})
+
+app.post("/addItem", async (req, res) =>{
+    const name = req.body.itemName;
+    const price = req.body.itemPrice;
+
+    await pool.query("INSERT INTO items (item, price) VALUES ($1, $2)", [name, price]);
+    res.redirect("/admin");
+})
+
+
 app.post("/add", async (req, res) =>{
     const item = req.body.item_name
     
