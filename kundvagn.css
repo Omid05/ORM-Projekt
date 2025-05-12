@@ -24,6 +24,7 @@
 #loggaIn:hover, #registrera:hover{
     background-color: #484848;
     color: #ffffff;
+
 }
 
 #logo{
@@ -33,6 +34,18 @@
 
 #tider{
     background-color: lightgray;
-    width: 50%;
+    width: 200px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 10px;
+    border: solid black 2px;
+}
+
+ul{
+margin-left: 5%;
+
+}
+li{
+    margin-left: 10%;
 }
 
