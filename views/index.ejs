@@ -7,19 +7,19 @@
     <title>ORM</title>
 </head>
 <body>
-<div id="topRow">
- <div id="logo">
+<header id="topRow">
+    <form action="/" method="GET" style=><button button style="border-color: transparent;" id="logo">
         <p class="red letter">O</p>
         <p class="letter" >R</p>
         <p class="red letter">M</p>
-    </div>
+        </button></form>
 <div id="icons">
     <img class="iconImg" src="images/search.png">
     <form action="/cart" method="GET"><button style="background-color: transparent; border-color: transparent;"><img class="iconImg" src="images/cart.png"></button></form>
     <form action="/login" method="GET"><button style="background-color: transparent; border-color: transparent;"><img class="iconImg" src="images/profile.png"></button></form>
 
 </div>
-</div>
+</header>
 
     <div id="items">
 
@@ -53,7 +53,6 @@
 </td>
 </tr>
     <%}); %>
-        </table>
 </div>
 <ul>
     <% cart.forEach((item) =>{ %>
@@ -72,7 +71,7 @@
 </ul>
 
 
-    <footer>
+<footer>
 
 <h2 id="omoss">Om Oss</h2>
 <h2 id="kontakt">Kontakt</h2>

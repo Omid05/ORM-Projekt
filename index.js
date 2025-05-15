@@ -39,7 +39,8 @@ app.get("/", async (req, res) => {
 })
 
 app.get("/cart", async (req, res) =>{
-    res.render("kundvagn.ejs")
+    const cart = await pool.query("SELECT items.ID, items.item, cart.amount, items.price, items.price * cart.amount AS totalprice FROM items INNER JOIN cart ON items.item = cart.item ORDER BY id");
+    res.render("kundvagn.ejs", {cart: cart.rows})
 
 })
 
@@ -71,25 +72,27 @@ app.post("/addItem", async (req, res) =>{
     const price = req.body.itemPrice;
 
     await pool.query("INSERT INTO items (item, price) VALUES ($1, $2)", [name, price]);
+    
     res.redirect("/admin");
 })
 
 
 app.post("/add", async (req, res) =>{
     const item = req.body.item_name
+
     
     
     
-    const currentItemExists = await pool.query("SELECT EXISTS (SELECT item FROM cart WHERE item = '" + item + "')");
+    const currentItemExists = await pool.query("SELECT EXISTS (SELECT item FROM cart WHERE item = ($1))", [item]);
     if (currentItemExists.rows[0].exists == false){
         await pool.query("INSERT INTO cart (item) VALUES ($1)", [item]);
 
     }
     else {
-        await pool.query("UPDATE cart SET amount = amount + 1 WHERE item = '" + item + "'")
+        await pool.query("UPDATE cart SET amount = amount + 1 WHERE item = ($1)", [item])
 
     }
-    await pool.query("UPDATE items SET amount = amount + 1 WHERE item = '" + item + "'")
+    await pool.query("UPDATE items SET amount = amount + 1 WHERE item = ($1)", [item])
 
     res.redirect("/");
 })

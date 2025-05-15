@@ -2,12 +2,12 @@
 
 
     @include logo; 
+    #topRow{
+        display: flex;
+    
+    }
 
 
-#topRow{
-    display: flex;
-
-}
 
 #icons{
     margin-left: auto;

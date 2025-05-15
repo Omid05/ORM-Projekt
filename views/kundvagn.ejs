@@ -3,13 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="kundvagn.css">
+    <title>ORM</title>
+    <link rel="stylesheet" href="./css/kundvagn.css">
 </head>
 <body>
-    <a href="index.html"><img src="logo.png" alt="logo" id="logo"></a>
-    <div style="height: 200px;">
+    <header id="topRow">
+        <form action="/" method="GET" style=><button button style="border-color: transparent;" id="logo">
+        <p class="red letter">O</p>
+        <p class="letter" >R</p>
+        <p class="red letter">M</p>
+        </button></form>
+<div id="icons">
+    <img class="iconImg" src="images/search.png">
+    <form action="/cart" method="GET"><button style="background-color: transparent; border-color: transparent;"><img class="iconImg" src="images/cart.png"></button></form>
+    <form action="/login" method="GET"><button style="background-color: transparent; border-color: transparent;"><img class="iconImg" src="images/profile.png"></button></form>
+
+</div>
+</header>
         <h1>Kundvagn</h1>
+        <div id="items">
+
+            <% cart.forEach((item) =>{ %> 
+                <tr>
+                    <td class="item">
+                <div class="item">
+                    <p class="itemName"><%= item.item%></p>
+                  
+            
+                    <p class="price"><%= item.totalprice%>kr</p>
+                    <div class="amount">
+                        <div class="remove"><form action="/remove" method="POST"><input type="hidden" name="item_id" id="item_id" value="<%= item.ID%>">
+                            <input type="hidden" name="item_name"  id="item_id" value="<%= item.item%>"><button class="addText">-</button></form></div>
+                       
+                                <p class="amountNumber">  
+                                    <%= item.amount%>
+            
+            
+                                </p>
+                        
+                        <div class="add">
+                            <form action="/add" method="POST">
+                                <input type="hidden" name="item_id" id="item_id" value="<%= item.id%>">
+                    <input type="hidden" name="item_name"  id="item_id" value="<%= item.item%>">
+                                <button class="addText">+</button>
+                            </form></div>
+                    </div>
+                </div>
+            </td>
+            </tr>
+                <%}); %>
+
         <a id="login-div" href="log in/login.html">
             <div id="loggaIn">
                 logga in

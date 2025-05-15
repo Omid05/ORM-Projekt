@@ -11,7 +11,7 @@
         <input type="text" id="itemName" name="itemName" required><br>
         <br>
         <label for="itemPrice">Pris:</label><br>
-        <input type="text" id="itemPrice" name="itemPrice" required><br>
+        <input type="number" id="itemPrice" name="itemPrice" required><br>
         <br>
         <button id="button" type="submit">Lägg till vara</button>
     </form>
@@ -25,7 +25,7 @@
         </li>
         <br>
         <form action="/updateItem/<%= item.id%>" method="POST">
-            <input type="text" id="update" name="newPrice" value="<%=item.price%>" required>
+            <input type="number" id="update" name="newPrice" value="<%=item.price%>" required>
             <br>
             <button type="submit">Uppdatera pris</button>
             

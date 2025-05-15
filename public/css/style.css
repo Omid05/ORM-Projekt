@@ -1,7 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+#topRow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 #logo {
   height: 55px;
-  width: 10%;
+  width: 100%;
   background-color: #F3F2F2;
   border-radius: 10px;
   font-size: 45px;
