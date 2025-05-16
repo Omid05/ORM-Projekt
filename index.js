@@ -117,3 +117,23 @@ app.post("/remove", async (req, res) =>{
     }
     res.redirect("/")
 })
+
+app.post("/register", async (req, res) => {
+    const { användarnamn, lösenord } = req.body;
+  
+    console.log("Form data received:");
+    console.log("Användarnamn:", användarnamn);
+    console.log("Lösenord:", lösenord);
+  
+    try {
+      const result = await pool.query(
+        "INSERT INTO users (användarnamn, lösenord) VALUES ($1, $2)",
+        [användarnamn, lösenord]
+      );
+      console.log("DB insert result:", result);
+      res.send("Användare sparad!");
+    } catch (err) {
+      console.error("DB error:", err);
+      res.status(500).send("Fel vid databasåtkomst.");
+    }
+  });
