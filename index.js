@@ -79,6 +79,7 @@ app.post("/addItem", async (req, res) =>{
 
 app.post("/add", async (req, res) =>{
     const item = req.body.item_name
+    const itemID = req.body.item_id
 
     
     
@@ -89,26 +90,28 @@ app.post("/add", async (req, res) =>{
 
     }
     else {
-        await pool.query("UPDATE cart SET amount = amount + 1 WHERE item = ($1)", [item])
+        await pool.query("UPDATE cart SET amount = amount + 1 WHERE id = ($1)", [itemID])
 
     }
-    await pool.query("UPDATE items SET amount = amount + 1 WHERE item = ($1)", [item])
+    await pool.query("UPDATE items SET amount = amount + 1 WHERE id = ($1)", [itemID])
 
     res.redirect("/");
 })
 
 app.post("/remove", async (req, res) =>{
     const item = req.body.item_name
-    const currentAmount = await pool.query("SELECT amount FROM cart WHERE item = '" + item + "'");
+    const itemID = req.body.item_id
+
+    const currentAmount = await pool.query("SELECT amount FROM cart WHERE id = ($1)", [itemID]);
     try{
     if (currentAmount.rows[0].amount > 1){
-        await pool.query("UPDATE cart SET amount = amount - 1 WHERE item = '" + item + "'")
-        await pool.query("UPDATE items SET amount = amount - 1 WHERE item = '" + item + "'")
+        await pool.query("UPDATE cart SET amount = amount - 1 WHERE item = ($1)", [item])
+        await pool.query("UPDATE items SET amount = amount - 1 WHERE id = ($1)", [itemID])
 
     }
     else {
-        await pool.query("DELETE FROM cart WHERE item = '" + item + "'")
-        await pool.query("UPDATE items SET amount = amount - 1 WHERE item = '" + item + "'")
+        await pool.query("DELETE FROM cart WHERE item = ($1)", [item])
+        await pool.query("UPDATE items SET amount = amount - 1 WHERE item = id = ($1)", [itemID])
 
         }
     }
