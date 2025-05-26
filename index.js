@@ -90,7 +90,7 @@ app.post("/add", async (req, res) =>{
 
     }
     else {
-        await pool.query("UPDATE cart SET amount = amount + 1 WHERE id = ($1)", [itemID])
+        await pool.query("UPDATE cart SET amount = amount + 1 WHERE item = ($1)", [item])
 
     }
     await pool.query("UPDATE items SET amount = amount + 1 WHERE id = ($1)", [itemID])
@@ -106,7 +106,7 @@ app.post("/remove", async (req, res) =>{
     try{
     if (currentAmount.rows[0].amount > 1){
         await pool.query("UPDATE cart SET amount = amount - 1 WHERE item = ($1)", [item])
-        await pool.query("UPDATE items SET amount = cart.amount WHERE id = ($1)", [itemID])
+        await pool.query("UPDATE items SET amount = amount - 1 WHERE id = ($1)", [itemID])
 
     }
     else {
@@ -121,7 +121,7 @@ app.post("/remove", async (req, res) =>{
     res.redirect("/")
 })
 
-app.post("/omoss", async (req, res) =>{
+app.get("/omoss", async (req, res) =>{
     res.render("omOss.ejs")
 })
 
