@@ -1,0 +1,63 @@
+@import "mixin";
+
+
+
+h1, h3{
+    text-align: center;
+}
+
+#karta{
+    display: block;
+    width: 50%;
+    height: 400px;
+    min-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#logo{
+    height: 55px;
+    width: 100%;
+    background-color: #F3F2F2;
+    border-radius: 10px;
+    
+    font-size: 45px; 
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    text-align: center;
+
+    
+}
+
+
+
+.letter{
+    display: inline;
+    
+    
+}
+
+.red{
+    color: red;
+}
+
+.container{
+    display: flex;
+    background-color: rgb(222, 21, 21);
+    justify-content: center;
+}
+
+.container > div{
+    background-color: rgb(205, 204, 202);
+    margin: 10px;
+    padding: 30px;
+    font-size: 40px;
+    width: 20%;
+}
+
+div > p{
+    font-size: medium;
+}

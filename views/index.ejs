@@ -37,7 +37,7 @@
                 <input type="hidden" name="item_name"  id="item_name" value="<%= item.item%>"><button class="addText">-</button></form></div>
            
                     <p class="amountNumber">  
-                        <%= item.amount%>
+                        <%= cart.amount%>
 
 
                     </p>
@@ -71,11 +71,9 @@
 </ul>
 
 
-<footer>
 
-<h2 id="omoss">Om Oss</h2>
+<form action="/omoss" method="POST"><button button style="border-color: transparent;" ><h2 id="omoss">Om Oss</h2></button></form>
 <h2 id="kontakt">Kontakt</h2>
-</footer>
 
 
 

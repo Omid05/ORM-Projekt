@@ -102,11 +102,11 @@ app.post("/remove", async (req, res) =>{
     const item = req.body.item_name
     const itemID = req.body.item_id
 
-    const currentAmount = await pool.query("SELECT amount FROM cart WHERE id = ($1)", [itemID]);
+    const currentAmount = await pool.query("SELECT amount FROM cart WHERE item = ($1)", [item   ]);
     try{
     if (currentAmount.rows[0].amount > 1){
         await pool.query("UPDATE cart SET amount = amount - 1 WHERE item = ($1)", [item])
-        await pool.query("UPDATE items SET amount = amount - 1 WHERE id = ($1)", [itemID])
+        await pool.query("UPDATE items SET amount = cart.amount WHERE id = ($1)", [itemID])
 
     }
     else {
@@ -119,6 +119,10 @@ app.post("/remove", async (req, res) =>{
         console.log("cart empty")
     }
     res.redirect("/")
+})
+
+app.post("/omoss", async (req, res) =>{
+    res.render("omOss.ejs")
 })
 
 app.post("/register", async (req, res) => {
